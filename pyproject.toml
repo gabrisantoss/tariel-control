@@ -1,0 +1,34 @@
+[tool.ruff]
+target-version = "py314"
+line-length = 160
+extend-exclude = [
+    ".venv",
+    "venv",
+    "__pycache__",
+    "recursos_rc.py",
+]
+
+[tool.ruff.lint]
+select = ["E", "F"]
+
+[tool.mypy]
+python_version = "3.14"
+ignore_missing_imports = true
+follow_imports = "skip"
+warn_unused_configs = true
+exclude = [
+    '^recursos_rc\.py$',
+    '^venv/',
+    '^\.venv/',
+]
+files = [
+    "main.py",
+    "app/domains/admin/routes.py",
+    "app/domains/chat/routes.py",
+    "app/domains/revisor/routes.py",
+    "app/domains/admin/services.py",
+    "app/shared/security.py",
+    "app/shared/database.py",
+    "nucleo/cliente_ia.py",
+    "nucleo/gerador_laudos.py",
+]
